@@ -109,7 +109,7 @@ def get_figure_layout(rows, cols, range1, range2):
     fig['layout']['plot_bgcolor'] = colors['background']
     fig['layout']['paper_bgcolor'] = colors['background']
     fig['layout']['font'] = {'color': colors['text']}
-    fig['layout']['legend'] = {'x': 20, 'y': 1, 'xanchor': 'left'}
+    fig['layout']['legend'] = {'x': 0, 'y': 1, 'xanchor': 'left'}
     if range1 != -1:
         fig['layout']['yaxis1'].update(range=[0, range1])
     if range2 != -1:
@@ -241,7 +241,7 @@ def metrics_net(self):
     return [
         html.Span('Bytes sent: {} MB with {} errors'.format(sent, erout), style=text_style),
         html.Span('Bytes received: {} MB with {} errors'.format(rcv, erin), style=text_style),
-        html.Span('Speed: {} MB/s'.format(psutil.net_if_stats().get('Ethernet')[2]), style=text_style)
+        #html.Span('Speed: {} MB/s'.format(psutil.net_if_stats().get('Ethernet')[2]), style=text_style) # if exists
     ]
 
 
